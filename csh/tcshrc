@@ -1,0 +1,16 @@
+#########################################################################
+set -f path = ( $path /sbin )
+set -f path = ( $path /usr/sbin )
+set -l path = ( $path /usr/local/sbin )
+set -f path = ( $path /bin )
+set -f path = ( $path /usr/bin )
+set -l path = ( $path /usr/local/bin )
+set -f path = ( $path $HOME/bin )
+
+########################################################################
+source $HOME/.tcshrc.set
+source $HOME/.tcshrc.pod
+source $HOME/.tcshrc.alias
+source $HOME/.tcshrc.complete
+source $HOME/.tcshrc.dircolors
+

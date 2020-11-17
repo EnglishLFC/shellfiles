@@ -1,0 +1,6 @@
+set -f PERL5LIB = ( /usr/local/lib64/perl5 )
+set -f PERL5LIB = ( $PERL5LIB /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 )
+set -f PERLLIB = ( $PERL5LIB )
+
+setenv PERLDOC_PAGER "/usr/bin/less -+C -iJqR"
+

@@ -1,0 +1,54 @@
+#############################################################################
+## GENERAL
+set promptchars="%"
+set prompt="%{\033[31m%}(%h)%{\033[0m%} %# "
+set prompt2="%R?"
+set prompt3="CORRECT> %B%R%b (y|n|e)?"
+set rprompt="%{\033[31m%}fmd %B%m%b%{\033[0m%}:%c3%s"
+set nobeep
+set history=2048
+unset histfile
+set histfile=~~/.histdev
+set who="%n has %a %l from %M."
+set inputmode=insert
+set autolist
+set autocorrect
+set autoexpand
+set autorehash
+set complete=enhance
+set correct=all
+unset autologout
+set symlinks=chase
+set listjobs
+set rmstar
+set fignore=(.o)
+set time=(8 "\
+Time spent in user mode   (CPU seconds) : %Us\
+Time spent in kernel mode (CPU seconds) : %Ss\
+Total time                              : %Es\
+CPU utilisation (percentage)            : %P\
+Times the process was swapped           : %W\
+Times of major page faults              : %F\
+Times of minor page faults              : %R")
+
+set color
+set colorcat
+
+unset tperiod
+unalias periodic
+
+#############################################################################
+## SYSTEM SPECIFIC
+setenv EDITOR '/usr/bin/vi'
+setenv TIME_STYLE "+%Y-%m-%d %H:%M:%S"
+setenv CVS_RSH ssh
+setenv CVSROOT :ext:someuser@something.whatever.com:/usr/cvsroot/
+setenv VIM_USER_NAME "YOUR NAME HERE <youremailhere@yourdomain.tld>"  
+setenv YDATE `date +%Y`
+setenv VIM_COPYRIGHT "(c) YOUR NAME HERE $YDATE"  
+setenv VIM_USER_TITLE "YOUR TITLE HERE"  
+setenv VIM_USER_EMAIL "<youremailhere@yourdomain.tld>"  
+setenv VIM_DATE `date +"%B %Y"`
+setenv DATE `date +%F`
+setenv DIRDATE `date +%Y-%m`
+

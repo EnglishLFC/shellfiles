@@ -1,0 +1,63 @@
+##############################################################################
+## General
+set var=`uname`;
+
+alias rm 	'rm -i'
+alias cp 	'cp -i'
+alias mv 	'mv -i'
+
+alias cls   	'clear'
+alias md    	'mkdir -p'
+alias rd    	'rmdir'
+
+##############################################################################
+# Skulduggery required to get round which version of ls is in use
+#
+switch ($var)
+case FreeBSD:
+  alias ls 	'ls -G'
+  alias l		'ls -laG'
+  alias lf  'ls -F'
+  alias ll  ' ls -laGC'
+  breaksw
+case Linux:
+  alias ls 'ls --color=auto'
+  alias l  'ls -la --color=auto'
+  alias lf 'ls -F'
+  alias ll 'ls -laC --color=auto'
+  breaksw
+endsw
+
+if ( -e `where less` ) then
+	alias more 	'less'
+endif
+alias today 	"date '+%d %h %y'"
+alias mess 	'clear ; tail -f /var/log/messages'
+alias x     	'exit'
+alias ff    	'find . -name $*'
+alias . 	'pwd'
+alias .. 	'cd ..'
+alias ../	'cd ../'
+alias ... 	'cd ../..'
+alias .../	'cd ../../'
+alias -		'cd -'
+alias /		'cd /'
+
+alias maek  'make'
+alias alais 'alias'
+alias csl   'clear'
+alias sl    'ls -G'
+
+alias helpcommand man
+
+alias log_tcpdump 'clear ; exec tcpdump -s 2000 -n -i eth0'
+alias log_lock 'clear; exec vlock -a'
+alias log_messages 'clear; exec tail -f /var/log/messages --follow=name --retry'
+alias enscriptit 'enscript -o output.ps -DDuplex:true -DTumble:true -r -M A4 -2'
+alias rfcget 'ncftpget ftp://ftp.isi.edu/in-notes/rfc\!^.txt' 
+alias msgcheck 'msgfmt -o /dev/null --statistics --strict --verbose'
+
+alias precmd "source ~/bin/gitprompt.csh"
+
+alias perldoc '/usr/local/bin/perldoc -t'
+

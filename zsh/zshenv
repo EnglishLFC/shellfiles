@@ -1,0 +1,198 @@
+PATHDIRS=(
+	/sbin
+	/usr/sbin
+	/usr/local/sbin
+	/opt/local/bin
+	/opt/local/sbin
+  /opt/local/lib
+	/bin
+	/usr/bin
+	/usr/local/bin
+	/usr/libexec
+	/usr/lib
+  /Developer/usr/bin
+	/usr/X11R6/bin
+  /usr/games
+  /etc
+	/usr/share/texmf/bin
+  /opt/local/libexec/gnubin
+  /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin
+  /opt/local/Library/Frameworks/Python.framework/Versions/3.7/bin
+  /opt/local/Library/Frameworks/Python.framework/Versions/3.8/bin
+  /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
+  /Library/TeX/texbin
+	$HOME/bin
+	$HOME/gocode/bin
+  $HOME/.cargo/bin
+  ./bin
+	.
+  $HOME/gitlocal/depot_tools
+)
+
+unset PATH
+foreach DIR in $PATHDIRS; do
+	[ -d $DIR ] && PATH=$PATH:$DIR
+done
+export PATH
+
+MANDIRS=(/usr/share/man
+	/usr/local/man
+	/usr/local/share/man
+  /opt/local/share/man
+)
+
+foreach DIR in $MANDIRS; do
+	MANPATH=$MANPATH:$DIR
+done
+export MANPATH
+
+GOPATH=$HOME/gocode
+export GOPATH
+
+TUNDEV=tun0
+export TUNDEV
+
+PERLDOC_PAGER="/usr/bin/less -+C -iJq"
+export PERLDOC_PAGER
+
+PAGER="/usr/bin/less -gniqJSFX"
+export PAGER
+
+EDITOR=/usr/bin/vim
+export EDITOR
+
+HISTSIZE=50000
+export HISTSIZE
+
+HISTFILE=$HOME/.zhistory
+export HISTFILE
+
+SAVEHIST=100
+export SAVEHIST
+
+#Various other variabes
+NSI=whois.networksolutions.com
+
+IRCNICK=""
+export IRCNICK
+
+IRCSERVER=""
+export IRCSERVER
+
+IRCUSER=""
+export IRCUSER
+
+IRC_HOST=""
+export IRC_HOST
+
+IRCNAME=""
+export IRCNAME
+
+TERM=xterm-color
+export TERM
+
+COLORTERM=xterm-color
+export COLORTERM
+
+LSOPTIONS=( -F -b -T -G );
+export LSOPTIONS
+
+MYSQL_PS1='\d\: '
+export MYSQL_PS1
+
+MYSQL_PAGER='/usr/bin/less -niSFX'
+export MYSQL_PAGER
+
+LESS="-gniqJSFX"
+export LESS
+
+export VIMRUNTIME=/usr/share/vim/vim83
+
+MOZILLA_FIVE_HOME=/usr/local/mozilla
+export MOZILLA_FIVE_HOME
+
+GREP_COLOR="00;33;01"
+export GREP_COLOR
+
+GREP_OPTIONS="--color --binary-files=without-match  --directories=skip"
+export GREP_OPTIONS
+
+TDL_DATABASE=./.tdldb
+export TDL_DATABASE
+
+WWW_HOME=http://localhost/
+export WWW_HOME
+
+LDAP_NICKS=
+export LDAP_NICKS
+
+TZ='America/New_York'
+export TZ
+
+TEXDIRS=(
+  .
+  /usr/local/texlive/2017/texmf-dist/tex/latex/base
+  /usr/local/texlive/2017/texmf-dist/tex/latex/lm
+  /usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel
+  /usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts
+  /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath
+  /usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex
+  /usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek
+  /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref
+  /usr/local/texlive/2017/texmf-dist/tex/latex/filehook
+  /usr/local/texlive/2017/texmf-dist/tex/latex/fontspec
+  /usr/local/texlive/2017/texmf-dist/tex/latex/graphics
+  /usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek
+  /usr/local/texlive/2017/texmf-dist/tex/latex/ucharcat
+  /usr/local/texlive/2017/texmf-dist/tex/latex/unicode-math
+  /usr/local/texlive/2017/texmf-dist/tex/latex/url
+  /usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/xparse
+  /usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/l3keys2e
+	$HOME/.tex
+  )
+foreach DIR in $TEXDIRS; do
+	TEXINPUTS=$TEXINPUTS:$DIR
+done
+
+export TEXINPUTS
+
+PRINTER=""
+export PRINTER
+
+VIM_USER_NAME=""
+export VIM_USER_NAME
+
+YDATE=`date +%Y`
+export YDATE
+
+VIM_COPYRIGHT=""
+export VIM_COPYRIGHT
+
+VIM_USER_TITLE=""
+export VIM_USER_TITLE
+
+VIM_USER_EMAIL=""
+export VIM_USER_EMAIL
+
+VIM_DATE=`date +"%B %Y"`
+export VIM_DATE
+
+DATE=`date +%F`
+export DATE
+
+DIRDATE=`date +%Y-%m`
+export DIRDATE
+
+CORPDATE=`date +%m%d%y`
+export CORPDATE
+
+export SURFRAW_print="yes"
+
+export SUDO_PROMPT="${HOST%%.*}# password: "
+
+export SOCCER_CLI_API_TOKEN=
+
+export JIRA_URL=
+
+export WTF_OWM_API_KEY=
+

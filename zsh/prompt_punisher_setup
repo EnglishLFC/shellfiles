@@ -1,0 +1,40 @@
+# This file can be used freely, just mention me if you modify it.
+# Nigel Houghton <punisher@warpten.net> July, 2004
+prompt_punisher_help () {
+  cat <<'EOF'
+I like to trim the directory location to 3 levels and I also need the
+spelling correction prompt. The left prompt is more minimal, only indicating
+the short hostname. This prompt makes use of whatever you have set your
+bold color environment variable to. For xterms, I like to use this in the
+$HOME/.Xresources:
+ !Xterm Color
+ xterm*background: #000000
+ xterm*foreground: #99BAE3
+ xterm*colorBDMode: True
+ xterm*colorBD: #6699ee
+ xterm*saveLines: 248
+ xterm*geometry: 119x60
+ xterm*visualBell: False
+ xterm*cursorcolor: gray
+ xterm*color255: True
+
+Which I think gives a nice terminal environment to work with.
+EOF
+}
+
+prompt_punisher_setup () {
+
+if [[ "$TERM" != "dumb" ]]; then
+    export PROMPT='%B%(?..[%?] )%m%b%# '
+    export RPROMPT="%B%3~%b"
+    export SPROMPT='zsh: correct '%R' to '%r' ? ([Y]es/[N]o/[E]dit/[A]bort) '
+    export PS2='%R %N %? '
+else
+    export PROMPT="%(?..[%?] )%m:%~> "
+fi
+
+export SPROMPT='zsh: correct '%R' to '%r' ? ([Y]es/[N]o/[E]dit/[A]bort) '
+
+}
+
+prompt_punisher_setup "$@"
